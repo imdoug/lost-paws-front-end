@@ -4,9 +4,7 @@ import Edit from "./Edit"
 
 
 const DogsCard = () =>{
-    const [dogs, setDogs] = useContext(DogContext)
-    const handleDelete = useContext(DogContext)
-    const handleUpdate = useContext(DogContext)
+    const [dogs, setDogs, handleCreate, handleDelete, handleUpdate,formModal] = useContext(DogContext)
     return(
         <>
         <div className="dogs-show">

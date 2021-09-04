@@ -64,6 +64,7 @@ footer{
     align-items: center;
     flex-wrap: wrap;
     font-size: 13px;
+    border: 1px solid gold;
 }
 .forms .btn{
     padding: 10px 15px;
@@ -80,4 +81,17 @@ footer{
 
 .hidden{
     display: none !important;
+}
+/* FORM */
+
+.form-box{
+    width: 300px;
+    border: 1px solid gold;
+    height: 400px;
+}
+form input{
+    text-align: end;
+}
+form button{
+    padding: 5px 10px;
 }
