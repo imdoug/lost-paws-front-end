@@ -1,29 +1,31 @@
-import React, {useContext} from "react"
-import { DogContext } from '../contexts/DogsContext'
+import React from "react"
 import {Link} from 'react-router-dom'
 
 const Nav = ()=>{
-    const [dogs, setDogs, handleCreate, handleDelete, handleUpdate,formModal] = useContext(DogContext)
     return(
         <>
         <nav>
             <Link to='/'>
-                <a>HOME</a>
+                <a href="">HOME</a>
             </Link>
             <Link to='/all-dogs'>
-                <a>SEARCH</a>
+                <a href="">SEARCH</a>
             </Link>
             <Link to='/lost-dogs'>
                 <a>LOST</a>
             </Link>
             <Link to='/found-dogs'>
-                <a>FOUND</a>
+                <a href="">FOUND</a>
             </Link>
             <Link to='/report'>
-                <a>POST A REPORT</a>
+                <a href="">POST A REPORT</a>
             </Link>
-            <a>ALERTS</a>
-            <a>ADVICES</a>
+            <Link to='/alerts'>
+                <a href="">ALERTS</a>
+            </Link>
+            <Link to='/advices'>
+                <a href="">ADVICES</a>
+            </Link>
         </nav>
         </>
     )

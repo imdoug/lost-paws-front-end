@@ -4,7 +4,7 @@ import Edit from "./Edit"
 
 
 const DogsCard = () =>{
-    const [dogs, setDogs, handleCreate, handleDelete, handleUpdate,formModal] = useContext(DogContext)
+    const [dogs, , , handleDelete] = useContext(DogContext)
     return(
         <>
         <div className="dogs-show">
@@ -18,7 +18,7 @@ const DogsCard = () =>{
                     <h4>{dog.breed}</h4>
                     <p>{dog.age} years</p>
                     <button onClick={(event) => handleDelete(dog.id)}>DELETE</button>
-                    <Edit handleUpdate={handleUpdate} pet={dog}/>
+                    <Edit pet={dog}/>
                 </div>
                 )
             })}

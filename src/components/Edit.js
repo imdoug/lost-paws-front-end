@@ -1,14 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { DogContext } from "../contexts/DogsContext";
 
 const Edit = (props) =>{
     let emptyPet = ({ ...props.pet})
-    const [pet, setPet] = useState({...props.pet})
+    const [pet, setPet] = useState({...emptyPet})
+    const [, , , , handleUpdate] = useContext(DogContext)
     const handleChange = (event) =>{
         setPet({...pet, [event.target.name]: event.target.value})
     }
     const handleSubmit = (event) =>{
         event.preventDefault()
-        props.handleUpdate(pet)
+        handleUpdate(pet)
         event.currentTarget.reset()
     }
     return(

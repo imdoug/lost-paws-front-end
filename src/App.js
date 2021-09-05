@@ -1,12 +1,17 @@
-import React, { useContext } from 'react';
+import React,{} from 'react';
 import {DogProvider} from './contexts/DogsContext';
+import {BreedProvider} from './contexts/BreedContext'
 import ReportForm from './components/ReportForm';
 import Nav from './components/Nav';
 import Footer from './components/Footer'
 import DogsCard from './components/DogsCards';
 import FoundDogs from './components/Foundogs';
 import LostDogs from './components/LostDogs';
+import Alerts from './components/Alerts';
+import Contact from './components/Contact';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Breeds from './components/Breeds.js';
+
 
 
 function App() {
@@ -22,9 +27,14 @@ function App() {
             <Route path="/all-dogs" component={DogsCard}/>
             <Route path="/lost-dogs" component={LostDogs}/>
             <Route path="/found-dogs" component={FoundDogs}/>
+            <Route path="/alerts" component={Alerts}/>
+            <Route path="/contacts" component={Contact}/>
           </Switch>
       </DogProvider>
-      <Footer/>
+      <BreedProvider>
+        <Route path="/breeds" component={Breeds}/>
+        <Footer/>
+      </BreedProvider>  
     </Router>
     </>
   );
