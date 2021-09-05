@@ -36,17 +36,13 @@ export const DogProvider = (props) =>{
             setDogs(response.data)
           })
       }
-      const formModal = ()  =>{
-        const form = document.querySelector(".form-box")
-        form.classList.toggle("hidden")
-      }
       useEffect(()=>{
         getDogs()
       }, [])
       
     return(
         <>
-        <DogContext.Provider value={[dogs, setDogs, handleCreate, handleDelete, handleUpdate, formModal]}>
+        <DogContext.Provider value={[dogs, setDogs, handleCreate, handleDelete, handleUpdate]}>
             {props.children}
         </DogContext.Provider>
         </>
