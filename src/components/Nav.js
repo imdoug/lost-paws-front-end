@@ -23,9 +23,6 @@ const Nav = ()=>{
             <Link to='/alerts'>
                 <a href="">ALERTS</a>
             </Link>
-            <Link to='/advices'>
-                <a href="">ADVICES</a>
-            </Link>
         </nav>
         </>
     )

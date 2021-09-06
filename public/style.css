@@ -9,6 +9,7 @@ body{
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
+    margin-top: 50px;
 }
 .dog-card{
     border: 1px solid gold;
@@ -118,13 +119,13 @@ form button{
     padding: 5px 10px;
 }
 footer{
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
 }
-a{
+/* a{
     text-decoration: none;
     color: black;
-}
+} */
 /* PAWS ANIMATION */
 
 .pad {
@@ -275,6 +276,21 @@ a{
   transform: rotate(10deg); 
   -webkit-animation: walk 3s linear infinite 1.75s;
   animation: walk 3s linear infinite 2.5s;
+}
+
+/* HELP */
+.help-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.help-box{
+  text-align: center;
+  width: 500px;
+  border: 1px solid gold;
+}
+li{
+  margin-bottom: 10px;
 }
     
 /* walking effect animation keyframes */

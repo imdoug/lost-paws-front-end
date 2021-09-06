@@ -1,34 +1,19 @@
 import React, { useContext, useState } from "react"
 import { BreedContext } from "../contexts/BreedContext"
-import { DogContext } from "../contexts/DogsContext"
 
 const Breeds = () =>{
     const [breeds] = useContext(BreedContext)
     const [currentBreed, setCurrentBreed] = useState("")
-    const [searchTerm, setSearchTerm] = useState('')
     console.log(breeds)
     const handleChange = (event)=>{
         let name = event.target.value
         setCurrentBreed(name)
-        console.log(currentBreed.origin)
-    }
-    const handleSearch = () =>{
-        breeds.filter((val)=>{
-            if(searchTerm = ""){
-                return ""
-            }else if (val.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())){
-                console.log(val)
-            }
-
-        })
- 
     }
     return(
         <>
         <div>
             <div id="banner-message">
                 <p>Select a Breed</p>
-                <input id="breed_search" placeholder="Search..." onChange={event =>()=>{setSearchTerm(event.target.value)}}/>
                 <select name="breed" onChange={(event) =>{handleChange(event)}} class="breed_select">
                     {breeds.map((breed)=>{
                         return(

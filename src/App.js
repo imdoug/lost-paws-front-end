@@ -9,6 +9,7 @@ import FoundDogs from './components/Foundogs';
 import LostDogs from './components/LostDogs';
 import Alerts from './components/Alerts';
 import Contact from './components/Contact';
+import Help from './components/Help';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Breeds from './components/Breeds.js';
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/found-dogs" component={FoundDogs}/>
             <Route path="/alerts" component={Alerts}/>
             <Route path="/contacts" component={Contact}/>
+            <Route path="/help" component={Help}/>
           </Switch>
       </DogProvider>
       <BreedProvider>
