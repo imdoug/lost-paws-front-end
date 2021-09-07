@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react"
 import { DogContext } from "../contexts/DogsContext"
+import { Link } from "react-router-dom"
 import Edit from "./Edit"
 
 
@@ -30,11 +31,14 @@ const DogsCard = () =>{
                     {value.report === 'lost' && <h3 style={lost[1]}>{value.name}</h3>}
                     {value.report === 'found' && <h3 style={found[1]}>{value.name}</h3>}
                     {value.report === 'reunited' && <h3 style={reunited[1]}>{value.name}</h3>}
-                    <p>{value.gender} dog</p>
-                    <p>{value.location}</p>
-                    <p>Report date: {sortData(value.date)}</p>
-                    <p>{value.report.toUpperCase()}</p>
-                    <button className="info-btn">More information</button>
+                    <p className="up">{value.gender.toUpperCase()} DOG</p>
+                    <p className="card-location"><b>{value.location}</b></p>
+                    { value.report === 'lost' &&<p className="up">Lost since: {sortData(value.date)}</p>}
+                    { value.report === 'found' && <p className="up">Found since: {sortData(value.date)}</p>}
+                    {value.report === 'lost' && <p className="title up" style={lost[1]}>{value.report.toUpperCase()}</p>}
+                    {value.report === 'found' && <p className="title up" style={found[1]}>{value.report.toUpperCase()}</p>}
+                    {value.report === 'reunited' && <p className="title up" style={reunited[1]}>{value.report.toUpperCase()}</p>}
+                    <Link to={`dogs/${value.id}`}><button className="info-btn">More information</button></Link>
                     {value.report === 'lost' && <div className="shadow" style={lost[0]}></div>}
                     {value.report === 'found' && <div className="shadow" style={found[0]}></div>}
                     {value.report === 'reunited' && <div className="shadow" style={reunited[0]}></div>}

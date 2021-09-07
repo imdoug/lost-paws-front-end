@@ -4,7 +4,8 @@ const Contact = () =>{
     return(
         <>
         <div>
-            <h4>some introdutions with reasons why get in conntact with us </h4>
+            <h2 className="centered">Have some valiable infomation about a dog? don't resitate, contact us!</h2>
+            <h4 className="centered">Any clue, could bring a puppy back to their family</h4>
         </div>
         <div className="contact-box">
             <form action="https://formsubmit.co/imdoug@icloud.com" method="POST">
@@ -23,10 +24,6 @@ const Contact = () =>{
                 <br/>
                 <input className="send-contact" type="submit" value="SEND"/>
             </form>
-            <div>
-                <h2>Have some valiable infomation about a dog? don't resitate, contact us!</h2>
-                <h3>Any clue, could bring a puppy back to their family</h3>
-            </div>
         </div>
         </>
     )

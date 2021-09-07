@@ -6,7 +6,7 @@ const Nav = ()=>{
         <>
         <nav className="nav-one">
             <div>
-                <span>If your dog is gone, lost  or stolen, you can post a report easily and free</span><Link to="/contacts"><a className="nav-contact">CONTACT</a></Link><Link to="/help"><a className="nav-help">HELP</a></Link>
+                <span>If your dog is gone, lost  or stolen, you can post a report easily and free</span><Link to="/contacts"><a className="nav-contact">Contact</a></Link><Link to="/help"><a className="nav-help">Help</a></Link>
             </div>
         </nav>
         <nav className="nav-two">
@@ -15,22 +15,22 @@ const Nav = ()=>{
             </div>
             <div className="nav-options">
             <Link to='/'>
-                <a className="home" href="">HOME</a>
+                <a className="home" href="">Home</a>
             </Link>
             {/* <Link to='/all-dogs'>
                 <a href="">SEARCH</a>
             </Link> */}
             <Link to='/lost-dogs'>
-                <a className="lost">LOST</a>
+                <a className="lost">Lost</a>
             </Link>
             <Link to='/found-dogs'>
-                <a className="found">FOUND</a>
+                <a className="found">Found</a>
             </Link>
             <Link to='/breeds'>
-                <a className="breeds">BREEDS</a>
+                <a className="breeds">Breeds</a>
             </Link>
             <Link to='/report'>
-                <a className="report">POST A REPORT</a>
+                <a className="report">REPORT DOG</a>
             </Link>
             </div>
         </nav>

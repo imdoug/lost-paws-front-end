@@ -18,12 +18,11 @@ const ReportForm = (props) =>{
         <>
         <div className="form-box">
             <form onSubmit={handleSubmit}>
-                <label className="form-header">REPORT FORM</label>
-                <br/>
-                <input type="radio" id="lost" name="report" value="lost"onChange={handleChange}/>
-                <label for="lost">Lost</label>
-                <input type="radio" name="report" value="found" onChange={handleChange}/>
-                <label for="found">Found</label><br></br>
+                <p className="form-header centered">REPORT FORM</p>
+                <input className="centered" type="radio" id="lost" name="report" value="lost"onChange={handleChange}/>
+                <label className="centered" for="lost">Lost</label>
+                <input  className="centered" type="radio" name="report" value="found" onChange={handleChange}/>
+                <label  className="centered" for="found">Found</label><br></br>
                 <br/>
                 <label>Name</label>
                 <br/>
@@ -84,6 +83,10 @@ const ReportForm = (props) =>{
                 <label>date</label>
                 <br/>
                 <input type="date" name="date" onChange={handleChange}></input>
+                <br />
+                <label>coments</label>
+                <br/>
+                <input type="text" name="coments" onChange={handleChange}></input>
                 <br />
                 <button className="create-btn" type="submit">POST</button>
             </form>

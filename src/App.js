@@ -11,6 +11,7 @@ import LostDogs from './components/LostDogs';
 import Alerts from './components/Alerts';
 import Contact from './components/Contact';
 import Help from './components/Help';
+import DogDetail from './components/DogDetail';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Breeds from './components/Breeds.js';
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/alerts" component={Alerts}/>
             <Route path="/contacts" component={Contact}/>
             <Route path="/help" component={Help}/>
+            <Route path={`/dogs/:id`} component={DogDetail}/>
           </Switch>
       </DogProvider>
       <BreedProvider>
