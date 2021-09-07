@@ -18,7 +18,7 @@ const ReportForm = (props) =>{
         <>
         <div className="form-box">
             <form onSubmit={handleSubmit}>
-                <label className="form-header">Lost or Found?</label>
+                <label className="form-header">REPORT FORM</label>
                 <br/>
                 <input type="radio" id="lost" name="report" value="lost"onChange={handleChange}/>
                 <label for="lost">Lost</label>

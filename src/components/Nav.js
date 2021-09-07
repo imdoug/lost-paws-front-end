@@ -4,25 +4,35 @@ import {Link} from 'react-router-dom'
 const Nav = ()=>{
     return(
         <>
-        <nav>
+        <nav className="nav-one">
+            <div>
+                <span>If your dog is gone, lost  or stolen, you can post a report easily and free</span><Link to="/contacts"><a className="nav-contact">CONTACT</a></Link><Link to="/help"><a className="nav-help">HELP</a></Link>
+            </div>
+        </nav>
+        <nav className="nav-two">
+            <div>
+            <img src="https://i.ibb.co/Z1Hk0nb/lostpaws-logo.png"/>
+            </div>
+            <div className="nav-options">
             <Link to='/'>
-                <a href="">HOME</a>
+                <a className="home" href="">HOME</a>
             </Link>
-            <Link to='/all-dogs'>
+            {/* <Link to='/all-dogs'>
                 <a href="">SEARCH</a>
-            </Link>
+            </Link> */}
             <Link to='/lost-dogs'>
-                <a>LOST</a>
+                <a className="lost">LOST</a>
             </Link>
             <Link to='/found-dogs'>
-                <a href="">FOUND</a>
+                <a className="found">FOUND</a>
+            </Link>
+            <Link to='/breeds'>
+                <a className="breeds">BREEDS</a>
             </Link>
             <Link to='/report'>
-                <a href="">POST A REPORT</a>
+                <a className="report">POST A REPORT</a>
             </Link>
-            <Link to='/alerts'>
-                <a href="">ALERTS</a>
-            </Link>
+            </div>
         </nav>
         </>
     )

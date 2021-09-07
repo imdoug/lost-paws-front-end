@@ -1,6 +1,7 @@
 import React,{} from 'react';
 import {DogProvider} from './contexts/DogsContext';
 import {BreedProvider} from './contexts/BreedContext'
+import Home from './components/Home';
 import ReportForm from './components/ReportForm';
 import Nav from './components/Nav';
 import Footer from './components/Footer'
@@ -21,10 +22,9 @@ function App() {
     <Router>
       <DogProvider>
           <Nav/>
-          <h1><span className="left"><i class="fa fa-paw"></i></span>Angel Paws<span className="right"><i class="fa fa-paw"></i></span></h1>
           <Switch>
             <Route path="/report" component={ReportForm}/>
-            {/* <Route path="/" exact component={Home}/> */}
+            <Route path="/" exact component={Home}/>
             <Route path="/all-dogs" component={DogsCard}/>
             <Route path="/lost-dogs" component={LostDogs}/>
             <Route path="/found-dogs" component={FoundDogs}/>

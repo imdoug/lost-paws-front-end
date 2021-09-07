@@ -5,6 +5,35 @@ export const DogContext = createContext()
 
 export const DogProvider = (props) =>{
     const [dogs, setDogs] = useState([])
+    
+    const sortData = (date)=>{
+      const splitted = date.split("-")
+      splitted.push(splitted.shift())
+      const shifted = splitted.join('/')
+      return shifted
+    }
+    const lost = [
+      {
+        backgroundColor: '#d40073'
+        },
+        {
+          color: "#d40073"
+        }
+    ]
+    const found = [
+      {
+      backgroundColor: '#75b603'
+    },
+    {
+      color: "#75b603"
+    }
+  ]
+    const reunited = [{
+      backgroundColor: '#00bcd4'
+    },
+    {
+      color: "#00bcd4"
+    }]
     const handleUpdate = (updatedPet) =>{
         axios
         .put("https://polar-garden-08247.herokuapp.com/dog/" + updatedPet.id, updatedPet)
@@ -42,7 +71,7 @@ export const DogProvider = (props) =>{
       
     return(
         <>
-        <DogContext.Provider value={[dogs, setDogs, handleCreate, handleDelete, handleUpdate]}>
+        <DogContext.Provider value={[dogs, setDogs, handleCreate, handleDelete, handleUpdate,lost,found,reunited,sortData]}>
             {props.children}
         </DogContext.Provider>
         </>

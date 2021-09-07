@@ -31,7 +31,7 @@ const Breeds = () =>{
                 {breeds.filter(breed => breed.name === currentBreed).map(filteredBreed =>(
                     <>
                     <div>
-                        <h1>{filteredBreed.name}</h1>
+                        <h1 className="centered">{filteredBreed.name}</h1>
                         <img src={filteredBreed.image.url}></img>
                         <p>Lifespan: <span>{filteredBreed.life_span}</span></p>
                         <p>height: <span>{filteredBreed.height.metric}</span></p>
