@@ -35,6 +35,7 @@ export const DogProvider = (props) =>{
       color: "#00bcd4"
     }]
     const handleUpdate = (updatedPet) =>{
+      console.log(updatedPet)
         axios
         .put("https://polar-garden-08247.herokuapp.com/dog/" + updatedPet.id, updatedPet)
             .then((response)=>{

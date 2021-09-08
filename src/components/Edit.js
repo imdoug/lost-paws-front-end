@@ -18,19 +18,25 @@ const Edit = (props) =>{
         <details>
             <summary>Edit {props.pet.name}</summary>
             <form onSubmit={handleSubmit}>
-                <label>Name</label>
-                <input type="text" name="name" onChange={handleChange}></input>
-                <br  />
-                <label>Age</label>
-                <input type="number" name="age" onChange={handleChange}></input>
-                <br  />
-                <label>Breed</label>
-                <input type="text" name="breed" onChange={handleChange}></input>
-                <br  />
-                <label>Image</label>
-                <input type="text" name="image" onChange={handleChange}></input>
-                <br  />
-                <button type="submit">EDIT</button>
+                <table  className="detail">
+                    {/* <tr>
+                        <th>Report Status</th>
+                        <th><input type="text" name="report" onChange={handleChange}></input></th>
+                    </tr> */}
+                    <tr>
+                        <th>Location</th>
+                        <th><input type="text" name="location" onChange={handleChange} ></input></th>
+                    </tr>
+                    <tr>
+                        <th>Breed</th>
+                        <th><input type="text" name="breed" onChange={handleChange} ></input></th>
+                    </tr>
+                    <tr>
+                        <th>Image</th>
+                        <th><input type="url" name="image" onChange={handleChange}></input></th>
+                    </tr>
+                </table>
+                <button className ="change-report up top" type="submit">EDIT</button>
             </form>
         </details>
         </>

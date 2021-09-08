@@ -14,8 +14,8 @@ const  LostDogs = () =>{
     return (
         <>
         <div className="dog-container">
-        <div className="filter-options">
-                <p>Filter By: </p>
+        <div className="search-box">
+            <div className="filter-options">
                 <input type="radio" id="lost" name="filter" value="breed"onChange={event =>{handleChange(event.target.value)}}/>
                 <label for="lost">Breed</label>
                 <input type="radio" name="filter" value="name" onChange={event =>{handleChange(event.target.value)}}/>
@@ -28,9 +28,10 @@ const  LostDogs = () =>{
                 <label for="lost">Color</label>
                 <input type="radio" id="lost" name="filter" value="size"onChange={event =>{handleChange(event.target.value)}}/>
                 <label for="lost">Size</label>
-                </div>
+            </div>
             <div className="input-row">
-        <i class="fa fa-search"></i><input type="text" className="search" placeholder="Search by name..." onChange={event =>{setSearchTerm(event.target.value)}}/>
+                <i class="fa fa-search"></i><input type="text" className="search" placeholder="Search..." onChange={event =>{setSearchTerm(event.target.value)}}/>
+            </div>
         </div>
         <div className="dogs-show">
         {dogs.filter((value)=>{
@@ -48,12 +49,14 @@ const  LostDogs = () =>{
                     {value.report === 'lost' && <h3 style={lost[1]}>{value.name}</h3>}
                     {value.report === 'found' && <h3 style={found[1]}>{value.name}</h3>}
                     {value.report === 'reunited' && <h3 style={reunited[1]}>{value.name}</h3>}
-                    <p>{value.gender} dog</p>
-                    <p>{value.location}</p>
-                    <p>Report date: {sortData(value.date)}</p>
-                    {value.report === 'lost' && <p className="title" style={lost[1]}>{value.report.toUpperCase()}</p>}
-                    {value.report === 'found' && <p className="title" style={found[1]}>{value.report.toUpperCase()}</p>}
-                    {value.report === 'reunited' && <p className="title" style={reunited[1]}>{value.report.toUpperCase()}</p>}
+                    <p className="up">{value.gender.toUpperCase()} DOG</p>
+                    <p className="card-location"><b>{value.location}</b></p>
+                    { value.report === 'lost' &&<p className="up">Lost since: {sortData(value.date)}</p>}
+                    { value.report === 'found' && <p className="up">Found since: {sortData(value.date)}</p>}
+                    { value.report === 'reunited' && <p className="up">Posted since: {sortData(value.date)}</p>}
+                    {value.report === 'lost' && <p className="title up" style={lost[1]}>{value.report.toUpperCase()}</p>}
+                    {value.report === 'found' && <p className="title up" style={found[1]}>{value.report.toUpperCase()}</p>}
+                    {value.report === 'reunited' && <p className="title up" style={reunited[1]}>{value.report.toUpperCase()}</p>}
                     <Link to={`dogs/${value.id}`}><button className="info-btn">More information</button></Link>
                     {value.report === 'lost' && <div className="shadow" style={lost[0]}></div>}
                     {value.report === 'found' && <div className="shadow" style={found[0]}></div>}

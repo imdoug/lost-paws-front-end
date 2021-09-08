@@ -35,6 +35,7 @@ const DogsCard = () =>{
                     <p className="card-location"><b>{value.location}</b></p>
                     { value.report === 'lost' &&<p className="up">Lost since: {sortData(value.date)}</p>}
                     { value.report === 'found' && <p className="up">Found since: {sortData(value.date)}</p>}
+                    { value.report === 'reunited' && <p className="up">Posted since: {sortData(value.date)}</p>}
                     {value.report === 'lost' && <p className="title up" style={lost[1]}>{value.report.toUpperCase()}</p>}
                     {value.report === 'found' && <p className="title up" style={found[1]}>{value.report.toUpperCase()}</p>}
                     {value.report === 'reunited' && <p className="title up" style={reunited[1]}>{value.report.toUpperCase()}</p>}

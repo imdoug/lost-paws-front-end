@@ -7,7 +7,7 @@ const Home = ()=>{
         <>
         <div>
             <div className="hero-img">
-            </div>
+        </div>
             <Alerts/>
             <DogsCard/>
         </div>

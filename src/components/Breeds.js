@@ -12,17 +12,23 @@ const Breeds = () =>{
     return(
         <>
         <div>
-            <div id="banner-message">
-                <p>Select a Breed</p>
-                <select name="breed" onChange={(event) =>{handleChange(event)}} class="breed_select">
-                    {breeds.map((breed)=>{
-                        return(
-                            <>
-                                <option id={breed.id} value={breed.name}>{breed.name}</option>
-                            </>
-                        )
-                    })}
-                </select>
+            <div className="hero-breeds">
+            </div>
+        </div>
+        <div>
+            <div className="alert-box">
+                <div id="banner-message">
+                    <p>Select a Breed</p>
+                    <select name="breed" onChange={(event) =>{handleChange(event)}} class="breed_select">
+                        {breeds.map((breed)=>{
+                            return(
+                                <>
+                                    <option id={breed.id} value={breed.name}>{breed.name}</option>
+                                </>
+                            )
+                        })}
+                    </select>
+                </div>
             </div>
             <div id="breed_data">
                 {currentBreed !== ""

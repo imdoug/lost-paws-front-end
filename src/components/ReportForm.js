@@ -1,5 +1,6 @@
 import React,{useContext, useState} from "react";
 import { DogContext } from '../contexts/DogsContext'
+import { Link } from "react-router-dom";
 
 const ReportForm = (props) =>{
     let emptyPet  = {name: "", age: "", breed: "", image: "",fur: "", ears: "", size: "", color: "", neutured: "", gender: "", location: "", date: "", report: ""}
@@ -18,77 +19,84 @@ const ReportForm = (props) =>{
         <>
         <div className="form-box">
             <form onSubmit={handleSubmit}>
-                <p className="form-header centered">REPORT FORM</p>
-                <input className="centered" type="radio" id="lost" name="report" value="lost"onChange={handleChange}/>
-                <label className="centered" for="lost">Lost</label>
-                <input  className="centered" type="radio" name="report" value="found" onChange={handleChange}/>
-                <label  className="centered" for="found">Found</label><br></br>
-                <br/>
-                <label>Name</label>
-                <br/>
-                <input type="text" name="name" onChange={handleChange}></input>
-                <br />
-               <label>Age</label>
-               <br/>
-                <input type="number" name="age" onChange={handleChange}></input>
-                <br />
-                <label>Breed</label>
-                <br/>
-                <input type="text" name="breed" onChange={handleChange}></input>
-                <br />
-                <label>image</label>
-                <br/>
-                <input type="text" name="image" onChange={handleChange}></input>
-                <br />
-                <label>Fur</label>
-                <br/>
-                <input type="text" name="fur" onChange={handleChange}></input>
-                <br />
-                <label>Ears</label>
-                <br/>
-                <input type="text" name="ears" onChange={handleChange}></input>
-                <br />
-                <label>Size</label>
-                <br/>
-                <select className="input-option" name="size" onChange={handleChange}>
-                    <option className="empty-option" value="">select a size</option>
-                    <option className="empty-option" value="very small">very small</option>
-                    <option className="empty-option" value="small">small</option>
-                    <option className="empty-option" value="medium">medium</option>
-                    <option className="empty-option" value="large">large</option>
-                    <option className="empty-option" value="extra large">extra large</option>
+                    <p className="form-header centered">REPORT FORM</p>
+                        <input className="centered" type="radio" id="lost" name="report" required value="lost"onChange={handleChange}/>
+                        <label className="centered aside" for="lost">Lost</label>
+                        <input  className="centered" type="radio" name="report" value="found" required onChange={handleChange}/>
+                        <label  className="centered" for="found">Found</label><br></br>
+                <table>
+                <tr className="top">
+                    <th><label>Name</label></th>
+                    <th><input className="text-field" type="text" name="name" onChange={handleChange} required></input></th>
+                </tr>
+                <tr>
+                    <th><label>Age</label></th>
+                    <th><input className="text-field" type="number" name="age" onChange={handleChange}></input></th>
+                </tr>
+                <tr>
+                    <th><label>Breed</label></th>
+                    <th><input className="text-field" type="text" name="breed" onChange={handleChange}></input></th>
+                </tr>
+                <tr>
+                    <th><label>Image URL</label></th>
+                    <th><input className="text-field" type="text" name="image" onChange={handleChange} required></input></th>
+                </tr>
+                <tr>
+                    <th><label>Fur</label></th>
+                    <th><input className="text-field" type="text" name="fur" onChange={handleChange}></input></th>
+                </tr>
+                <tr>
+                    <th><label>Ears</label></th>
+                    <th><input className="text-field" type="text" name="ears" onChange={handleChange}></input></th>
+                </tr>
+                <tr>
+                    <th><label>Size</label></th>
+                    <th>
+                    <select className="input-option" name="size" onChange={handleChange} required>
+                        <option className="empty-option" value="">select a size</option>
+                        <option className="empty-option" value="very small">very small</option>
+                        <option className="empty-option" value="small">small</option>
+                        <option className="empty-option" value="medium">medium</option>
+                        <option className="empty-option" value="large">large</option>
+                        <option className="empty-option" value="extra large">extra large</option>
                 </select>
-                <br />
-                <label>Color</label>
-                <br/>
-                <input type="text" name="color" onChange={handleChange}></input>
-                <br />
-                <label>Spayed/Neutured</label>
-                <br/>
-                <input type="text" name="neutured" onChange={handleChange}></input>
-                <br />
-                <label>Gender</label>
-                <br/>
-                <select className="input-option" name="gender" onChange={handleChange}>
+                    </th>
+                </tr>
+                <tr>
+                    <th><label>Color</label></th>
+                    <th><input className="text-field" type="text" name="color" onChange={handleChange} required></input></th>
+                </tr>
+                <tr>
+                    <th><label>Spayed/Neutured</label></th>
+                    <th><input className="text-field" type="text" name="neutured" onChange={handleChange}></input></th>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Gender</label>
+                    </th>
+                    <th>
+                    <select  className="input-option" name="gender" onChange={handleChange} required>
                     <option className="empty-option" value="">select a gender</option>
                     <option className="empty-option" value="female">female</option>
                     <option className="empty-option" value="male">male</option>
                     <option className="empty-option" value="i do not know">i don't know</option>
                 </select>
-                <br />
-                <label>Location</label>
-                <br/>
-                <input type="text" name="location" onChange={handleChange}></input>
-                <br />
-                <label>date</label>
-                <br/>
-                <input type="date" name="date" onChange={handleChange}></input>
-                <br />
-                <label>coments</label>
-                <br/>
-                <input type="text" name="coments" onChange={handleChange}></input>
-                <br />
-                <button className="create-btn" type="submit">POST</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th><label>Location</label></th>
+                    <th><input className="text-field" type="text" name="location" onChange={handleChange} required></input></th>
+                </tr>
+                <tr>
+                    <th><label>date</label></th>
+                    <th><input className="text-field" type="date" name="date" onChange={handleChange} required></input></th>
+                </tr>
+                <tr>
+                    <th><label>coments</label></th>
+                    <th><input className="text-field" type="text" name="coments" onChange={handleChange}></input></th>
+                </tr>
+                </table>
+                <button className="create-btn" type="submit">post</button>
             </form>
         </div>
         </>

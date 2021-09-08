@@ -32,7 +32,7 @@ function App() {
             <Route path="/alerts" component={Alerts}/>
             <Route path="/contacts" component={Contact}/>
             <Route path="/help" component={Help}/>
-            <Route path={`/dogs/:id`} component={DogDetail}/>
+            <Route path="/dogs/:id" component={DogDetail}/>
           </Switch>
       </DogProvider>
       <BreedProvider>
