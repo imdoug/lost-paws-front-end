@@ -92,8 +92,8 @@ const ReportForm = (props) =>{
                     <th><input className="text-field" type="date" name="date" onChange={handleChange} required></input></th>
                 </tr>
                 <tr>
-                    <th><label>coments</label></th>
-                    <th><input className="text-field" type="text" name="coments" onChange={handleChange}></input></th>
+                    <th><label>comments</label></th>
+                    <th><input className="text-field" type="text" name="comments" onChange={handleChange}></input></th>
                 </tr>
                 </table>
                 <button className="create-btn" type="submit">post</button>

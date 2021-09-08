@@ -21,17 +21,20 @@ const DogDetail = ({match}) =>{
                     {filteredDog.report === 'lost' && <h3 style={lost[1]}>{filteredDog.name}</h3>}
                     {filteredDog.report === 'found' && <h3 style={found[1]}>{filteredDog.name}</h3>}
                     {filteredDog.report === 'reunited' && <h3 style={reunited[1]}>{filteredDog.name}</h3>}
-                    <p className="up">{filteredDog.gender.toUpperCase()} DOG</p>
+                    <p >{filteredDog.gender === "i do not know" ? "N/A" : filteredDog.gender.toUpperCase()} DOG</p>
+                    <p className="up">Breed: {filteredDog.breed}</p>
                     <p className="card-location"><b>{filteredDog.location}</b></p>
                     { filteredDog.report === 'lost' &&<p className="up">Lost since: {sortData(filteredDog.date)}</p>}
                     { filteredDog.report === 'found' && <p className="up">Found since: {sortData(filteredDog.date)}</p>}
                     { filteredDog.report === 'reunited' && <p className="up">Posted since: {sortData(filteredDog.date)}</p>}
-                    <p>Age {filteredDog.age} year(s)</p>
-                    <p>Size {filteredDog.size}</p>
-                    <p className="up">Spayed/Neutured "{filteredDog.neutured}"</p>
-                    <p>Color {filteredDog.color}</p>
-                    <p>Fur {filteredDog.fur}</p>
-                    <p className="up">Ears {filteredDog.ears}</p>
+                    <p>Age: {filteredDog.age} year(s)</p>
+                    <p>Size: {filteredDog.size}</p>
+                    <p className="up">Spayed/Neutured: "{filteredDog.neutured}"</p>
+                    <p>Color: {filteredDog.color}</p>
+                    <p>Fur: {filteredDog.fur}</p>
+                    <p className="up">Ears: {filteredDog.ears}</p>
+                    <p>Comments:</p>
+                    <p  className="up">{filteredDog.comments}</p>
                     {filteredDog.report === 'lost' && <p className="title up" style={lost[1]}>{filteredDog.report.toUpperCase()}</p>}
                     {filteredDog.report === 'found' && <p className="title up" style={found[1]}>{filteredDog.report.toUpperCase()}</p>}
                     {filteredDog.report === 'reunited' && <p className="title up" style={reunited[1]}>{filteredDog.report.toUpperCase()}</p>}
