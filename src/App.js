@@ -16,7 +16,6 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Breeds from './components/Breeds.js';
 
 
-
 function App() {
   return (
     <>

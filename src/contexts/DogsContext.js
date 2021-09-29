@@ -37,14 +37,14 @@ export const DogProvider = (props) =>{
     const handleUpdate = (updatedPet) =>{
       console.log(updatedPet)
         axios
-        .put("https://polar-garden-08247.herokuapp.com/dog/" + updatedPet.id, updatedPet)
+        .put("https://shielded-fortress-14227.herokuapp.com/dog/" + updatedPet.id, updatedPet)
             .then((response)=>{
               console.log(response.data)
               setDogs(response.data)
             })
       }
       const handleCreate = (newPet) =>{
-          axios.post("https://polar-garden-08247.herokuapp.com/dogs", newPet)
+          axios.post("https://shielded-fortress-14227.herokuapp.com/dogs", newPet)
           .then((response)=>{
             console.log(response.data)
             setDogs(response.data)
@@ -52,7 +52,7 @@ export const DogProvider = (props) =>{
       }
       const handleDelete = (id) =>{
         axios
-          .delete("https://polar-garden-08247.herokuapp.com/dog/" + id)
+          .delete("https://shielded-fortress-14227.herokuapp.com/dog/" + id)
           .then((response)=>{
             console.log(response.data)
             setDogs(response.data)
@@ -60,7 +60,7 @@ export const DogProvider = (props) =>{
       }
       const getDogs = () =>{
         axios
-          .get("https://polar-garden-08247.herokuapp.com/dogs")
+          .get("https://shielded-fortress-14227.herokuapp.com/dogs")
           .then((response)=>{
             console.log(response.data)
             setDogs(response.data)
