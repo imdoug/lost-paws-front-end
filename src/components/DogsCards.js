@@ -28,21 +28,21 @@ const DogsCard = () =>{
                     <div>
                     <img src={value.image}/>
                     </div>
-                    {value.report === 'lost' && <h3 style={lost[1]}>{value.name}</h3>}
-                    {value.report === 'found' && <h3 style={found[1]}>{value.name}</h3>}
-                    {value.report === 'reunited' && <h3 style={reunited[1]}>{value.name}</h3>}
+                    {value.report_type === 'lost' && <h3 style={lost[1]}>{value.name}</h3>}
+                    {value.report_type === 'found' && <h3 style={found[1]}>{value.name}</h3>}
+                    {value.report_type === 'reunited' && <h3 style={reunited[1]}>{value.name}</h3>}
                     <p className="up">{value.gender.toUpperCase()} DOG</p>
                     <p className="card-location"><b>{value.location}</b></p>
-                    { value.report === 'lost' &&<p className="up">Lost since: {sortData(value.date)}</p>}
-                    { value.report === 'found' && <p className="up">Found since: {sortData(value.date)}</p>}
-                    { value.report === 'reunited' && <p className="up">Posted since: {sortData(value.date)}</p>}
-                    {value.report === 'lost' && <p className="title up" style={lost[1]}>{value.report.toUpperCase()}</p>}
-                    {value.report === 'found' && <p className="title up" style={found[1]}>{value.report.toUpperCase()}</p>}
-                    {value.report === 'reunited' && <p className="title up" style={reunited[1]}>{value.report.toUpperCase()}</p>}
+                    { value.report_type === 'lost' &&<p className="up">Lost since: {sortData(value.date)}</p>}
+                    { value.report_type === 'found' && <p className="up">Found since: {sortData(value.date)}</p>}
+                    { value.report_type === 'reunited' && <p className="up">Posted since: {sortData(value.date)}</p>}
+                    {value.report_type === 'lost' && <p className="title up" style={lost[1]}>{value.report_type.toUpperCase()}</p>}
+                    {value.report_type === 'found' && <p className="title up" style={found[1]}>{value.report_type.toUpperCase()}</p>}
+                    {value.report_type === 'reunited' && <p className="title up" style={reunited[1]}>{value.report_type.toUpperCase()}</p>}
                     <Link to={`dogs/${value.id}`}><button className="info-btn">More information</button></Link>
-                    {value.report === 'lost' && <div className="shadow" style={lost[0]}></div>}
-                    {value.report === 'found' && <div className="shadow" style={found[0]}></div>}
-                    {value.report === 'reunited' && <div className="shadow" style={reunited[0]}></div>}
+                    {value.report_type === 'lost' && <div className="shadow" style={lost[0]}></div>}
+                    {value.report_type === 'found' && <div className="shadow" style={found[0]}></div>}
+                    {value.report_type === 'reunited' && <div className="shadow" style={reunited[0]}></div>}
                     {/* <button onClick={(event) => handleDelete(value.id)}>DELETE</button>
                     <Edit pet={value}/> */}
                 </div>

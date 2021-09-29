@@ -44,6 +44,7 @@ export const DogProvider = (props) =>{
             })
       }
       const handleCreate = (newPet) =>{
+        console.log(newPet)
           axios.post("https://shielded-fortress-14227.herokuapp.com/dogs", newPet)
           .then((response)=>{
             console.log(response.data)
