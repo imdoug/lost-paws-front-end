@@ -3,7 +3,7 @@ import { DogContext } from '../contexts/DogsContext'
 import { Link } from "react-router-dom";
 
 const ReportForm = (props) =>{
-    let emptyPet  = {name: "", age: "", breed: "", image: "",fur: "", ears: "", size: "", color: "", neutured: "", gender: "", location: "", date: "", report: ""}
+    let emptyPet  = {name: "", age: "", breed: "", image: "",fur: "", ears: "", size: "", color: "", neutured: "", gender: "", location: "", date: "", report_type: ""}
     const [pet, setPet] = useState({...emptyPet})
     const [, , handleCreate] = useContext(DogContext)
     const handleChange = (event)=>{
@@ -20,9 +20,9 @@ const ReportForm = (props) =>{
         <div className="form-box">
             <form onSubmit={handleSubmit}>
                     <p className="form-header centered">REPORT FORM</p>
-                        <input className="centered" type="radio" id="lost" name="report" required value="lost"onChange={handleChange}/>
+                        <input className="centered" type="radio" id="lost" name="report_type" required value="lost"onChange={handleChange}/>
                         <label className="centered aside" for="lost">Lost</label>
-                        <input  className="centered" type="radio" name="report" value="found" required onChange={handleChange}/>
+                        <input  className="centered" type="radio" name="report_type" value="found" required onChange={handleChange}/>
                         <label  className="centered" for="found">Found</label><br></br>
                 <table>
                 <tr className="top">
